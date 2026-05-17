@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+  <foreignObject width="2000" height="2000">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <body>
+        <textarea id="userhtml" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" rows="20" cols="40" style="white-space: nowrap; overflow: auto"></textarea>
+        <button id="reload" type="button">Load HTML!</button>
+	    <script><![CDATA[
+          const textarea = document.querySelector("#userhtml")
+          const reload = document.querySelector("#reload");
+          reload.addEventListener("click", () => {
+            var myDocument = window.open("about:blank", "_blank").document
+            myDocument.open()
+            myDocument.write(textarea.value)
+            myDocument.close()
+          });
+        ]]></script>
+      </body>
+    </html>
+  </foreignObject>
+</svg>
+<!-- Test code: <p id="animalSound">meow</p><script>document.getElementById("animalSound").innerHTML="woof"</script> -->
